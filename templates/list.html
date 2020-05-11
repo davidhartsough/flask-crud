@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}List{% endblock %}
+
+{% block main %}
+<section id="list">
+  <header><h1>List</h1></header>
+  <ul>
+    {% for thing in things: %}
+      <li>
+        <a class="item" href="thing/{{ thing.id }}">
+          <span class="name">{{ thing.title }}</span> :: <span class="number">{{ thing.num }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <footer>
+    <a class="button" href="/new">Add new thing</a>
+  </footer>
+</section>
+{% endblock %}

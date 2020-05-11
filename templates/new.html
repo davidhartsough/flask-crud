@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}New Thing{% endblock %}
+
+{% block main %}
+<section id="new">
+  <header><h1>New Thing</h1></header>
+  <form action="/create" method="post">
+    <label>
+      Title
+      <input type="text" name="title" placeholder="Title" autofocus required />
+    </label>
+    <label>
+      Number
+      <input type="number" name="num" placeholder="10" required />
+    </label>
+    <label>
+      Stuff
+      <select name="stuff" required multiple>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </label>
+    <!--
+    <label>
+      Other?
+      <textarea name="other" placeholder="Other? Wut" />
+    </label>
+    -->
+    <footer>
+      <button type="submit">Add</button>
+    </footer>
+  </form>
+</section>
+{% endblock %}

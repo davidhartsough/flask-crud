@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Edit Thing{% endblock %}
+
+{% block main %}
+<section id="edit">
+  <header><h1>Edit Thing</h1></header>
+  <form action="/update/{{ thing.id }}" method="post">
+    <label>
+      Title
+      <input type="text" name="title" value="{{ thing.title }}" placeholder="Title" autofocus required />
+    </label>
+    <label>
+      Number
+      <input type="number" name="num" value="{{ thing.num }}" placeholder="10" required />
+    </label>
+    <label>
+      Stuff
+      <select name="stuff" required multiple>
+        <option value="option1" {% if "option1" in thing.stuff %}selected{% endif %}>Option 1</option>
+        <option value="option2" {% if "option2" in thing.stuff %}selected{% endif %}>Option 2</option>
+        <option value="option3" {% if "option3" in thing.stuff %}selected{% endif %}>Option 3</option>
+      </select>
+    </label>
+    <!--
+    <label>
+      Other?
+      <textarea name="other" placeholder="Other? Wut" />
+    </label>
+    -->
+    <footer>
+      <button type="submit">Save</button>
+    </footer>
+  </form>
+</section>
+{% endblock %}

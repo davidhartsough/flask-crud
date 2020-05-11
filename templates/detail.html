@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}{{ thing.title }}{% endblock %}
+
+{% block main %}
+<section id="detail">
+  <header>
+    <h1>{{ thing.title }} :: {{ thing.num }}</h1>
+    <p>{{ thing.created }}</p>
+  </header>
+  <ul>
+    {% for s in thing.stuff.split(","): %}
+      <li>{{ s }}</li>
+    {% endfor %}
+  </ul>
+  <footer>
+    <a class="button" href="/edit/{{ thing.id }}">Edit</a>
+  </footer>
+</section>
+{% endblock %}
